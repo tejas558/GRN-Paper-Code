@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causal-grn"
+version = "0.1.0"
+description = "Delay-aware dynamic GRN inference from time-series single-cell multiome data"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "OpenAI ChatGPT"}]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "torch>=2.1",
+  "pyyaml>=6.0",
+  "h5py>=3.9",
+  "pyranges>=0.0.129",
+  "matplotlib>=3.7",
+  "seaborn>=0.13",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

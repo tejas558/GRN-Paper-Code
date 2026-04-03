@@ -1,0 +1,95 @@
+projects:
+  - name: gse318326_human_plasma
+    species: human
+    gtf: /absolute/path/to/gencode.v46.annotation.gtf.gz
+    tf_list: /absolute/path/to/human_tfs.txt
+    output_dir: ./outputs
+    preprocessing:
+      n_tfs: 100
+      n_targets: 400
+      n_bins: 32
+      min_cells_per_bin: 20
+      promoter_upstream: 2000
+      promoter_downstream: 500
+    model:
+      latent_dim: 32
+      hidden_dim: 128
+      edge_rank: 8
+      epochs: 600
+      lr: 0.001
+      max_tau: 0.35
+      max_step: 0.02
+      early_stopping_patience: 60
+    samples:
+      - path: /absolute/path/to/GSE318326_D4_filtered_feature_bc_matrix.h5
+        time: 4
+        condition: DMSO
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_D7_filtered_feature_bc_matrix.h5
+        time: 7
+        condition: DMSO
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_D10_filtered_feature_bc_matrix.h5
+        time: 10
+        condition: DMSO
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_D13_filtered_feature_bc_matrix.h5
+        time: 13
+        condition: DMSO
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_A4_filtered_feature_bc_matrix.h5
+        time: 4
+        condition: A366
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_A7_filtered_feature_bc_matrix.h5
+        time: 7
+        condition: A366
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_A10_filtered_feature_bc_matrix.h5
+        time: 10
+        condition: A366
+        replicate: rep1
+      - path: /absolute/path/to/GSE318326_A13_filtered_feature_bc_matrix.h5
+        time: 13
+        condition: A366
+        replicate: rep1
+
+  - name: gse223041_mouse_mesc
+    species: mouse
+    gtf: /absolute/path/to/gencode.vM35.annotation.gtf.gz
+    tf_list: /absolute/path/to/mouse_tfs.txt
+    output_dir: ./outputs
+    preprocessing:
+      n_tfs: 100
+      n_targets: 300
+      n_bins: 28
+      min_cells_per_bin: 20
+      promoter_upstream: 2000
+      promoter_downstream: 500
+    model:
+      latent_dim: 32
+      hidden_dim: 128
+      edge_rank: 8
+      epochs: 600
+      lr: 0.001
+      max_tau: 0.35
+      max_step: 0.02
+      early_stopping_patience: 60
+    samples:
+      # Option A: use the aggregated H5 plus a barcode-level metadata CSV.
+      - path: /absolute/path/to/GSE223041_Aggregated_filtered_feature_bc_matrix.h5
+        kind: aggregated
+        metadata_csv: /absolute/path/to/gse223041_cell_metadata.csv
+        condition: AA_LiCl
+        replicate: pooled
+
+      # Option B instead of Option A: if you extract GSE223041_RAW.tar and get sample-level H5 files,
+      # comment out the aggregated entry above and list each sample separately with explicit time/replicate.
+      # - path: /absolute/path/to/day2_rep1_filtered_feature_bc_matrix.h5
+      #   time: 2
+      #   condition: AA_LiCl
+      #   replicate: rep1
+      # - path: /absolute/path/to/day2_rep2_filtered_feature_bc_matrix.h5
+      #   time: 2
+      #   condition: AA_LiCl
+      #   replicate: rep2

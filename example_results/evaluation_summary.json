@@ -1,0 +1,55 @@
+{
+  "project": "gse318326_human_plasma",
+  "species": "human",
+  "n_trajectories": 2,
+  "n_tfs": 100,
+  "n_targets": 400,
+  "output_dir": "/data2/tejas/GRN/outputs/gse318326",
+  "final_training_row": {
+    "epoch": 800.0,
+    "loss": 0.1411785036325454,
+    "recon": 0.0050655850209295,
+    "recon_a": 0.0019873896962963,
+    "recon_r": 0.0019722339930012,
+    "recon_x": 0.0011059614189434,
+    "deriv": 2.7162702083587646,
+    "edge_l1": 0.3762936443090439,
+    "edge_smooth": 0.4037235677242279,
+    "latent_l2": 2.2139976620674133,
+    "tau_access_to_tf": 0.0349126681685447,
+    "tau_tf_to_target": 0.0496478714048862
+  },
+  "aggregate_metrics": {
+    "rmse": {
+      "target_rna": 0.044933851796840674,
+      "tf_acc": 0.04523463392688054,
+      "tf_rna": 0.0542800070130022
+    },
+    "mae": {
+      "target_rna": 0.03071596659719944,
+      "tf_acc": 0.030440662056207657,
+      "tf_rna": 0.03595016524195671
+    },
+    "r2": {
+      "target_rna": 0.9937797999826584,
+      "tf_acc": 0.9202644079472945,
+      "tf_rna": 0.9954527083365201
+    },
+    "pearson_r": {
+      "target_rna": 0.9971577914998131,
+      "tf_acc": 0.9607824480029536,
+      "tf_rna": 0.9983832259552028
+    }
+  },
+  "artifacts": [
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/A366_edge_heatmap.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/A366_edge_timecourses.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/A366_reconstructions.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/DMSO_edge_heatmap.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/DMSO_edge_timecourses.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/DMSO_reconstructions.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/learned_delays.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/figures/training_metrics.png",
+    "/data2/tejas/GRN/results/gse318326_human_plasma_20260312_013043/tables/reconstruction_metrics.csv"
+  ]
+}

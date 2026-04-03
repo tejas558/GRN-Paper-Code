@@ -1,0 +1,57 @@
+projects:
+  - name: gse318326_human_plasma
+    species: human
+    gtf: /data2/tejas/GRN/GRCh38.genes_only.gtf.gz
+    output_dir: /data2/tejas/GRN/outputs
+
+    preprocessing:
+      n_tfs: 100
+      n_targets: 400
+      n_bins: 32
+      min_cells_per_bin: 20
+      promoter_upstream: 2000
+      promoter_downstream: 500
+
+    model:
+      latent_dim: 64
+      hidden_dim: 256
+      edge_rank: 16
+      epochs: 800
+      lr: 0.001
+      max_tau: 0.35
+      max_step: 0.02
+      early_stopping_patience: 60
+
+    samples:
+      - path: /data2/tejas/GRN/data2/GSE318326_D4_filtered_feature_bc_matrix.h5
+        time: 4
+        condition: DMSO
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_D7_filtered_feature_bc_matrix.h5
+        time: 7
+        condition: DMSO
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_D10_filtered_feature_bc_matrix.h5
+        time: 10
+        condition: DMSO
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_D13_filtered_feature_bc_matrix.h5
+        time: 13
+        condition: DMSO
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_A4_filtered_feature_bc_matrix.h5
+        time: 4
+        condition: A366
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_A7_filtered_feature_bc_matrix.h5
+        time: 7
+        condition: A366
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_A10_filtered_feature_bc_matrix.h5
+        time: 10
+        condition: A366
+        replicate: rep1
+      - path: /data2/tejas/GRN/data2/GSE318326_A13_filtered_feature_bc_matrix.h5
+        time: 13
+        condition: A366
+        replicate: rep1
